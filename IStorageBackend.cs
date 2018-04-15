@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Thorium_Storage_Service
+namespace Thorium.StorageService
 {
     public interface IStorageBackend
     {

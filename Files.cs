@@ -1,4 +1,4 @@
-﻿namespace Thorium_Storage_Service
+﻿namespace Thorium.StorageService
 {
     public static class Files
     {

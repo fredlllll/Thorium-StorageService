@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using NLog;
-using Thorium_Config;
-using Thorium_Reflection;
+using Thorium.Config;
+using Thorium.Reflection;
 
-namespace Thorium_Storage_Service
+namespace Thorium.StorageService
 {
     public static class StorageService
     {
@@ -40,11 +40,11 @@ namespace Thorium_Storage_Service
         {
             if(!cachedPackages.TryGetValue(id, out string packageCacheDir))
             {
-                packageCacheDir = Path.Combine(Thorium_IO.Directories.TempDir, id + "_cache");
+                packageCacheDir = Path.Combine(Thorium.IO.Directories.TempDir, id + "_cache");
                 string downloadTarget = packageCacheDir;
                 if(postprocessingAction != null)
                 {
-                    downloadTarget = Path.Combine(Thorium_IO.Directories.TempDir, id + "_download");
+                    downloadTarget = Path.Combine(Thorium.IO.Directories.TempDir, id + "_download");
                 }
 
                 Directory.CreateDirectory(downloadTarget);
@@ -67,7 +67,7 @@ namespace Thorium_Storage_Service
                 cachedPackages[id] = packageCacheDir;
             }
             Directory.CreateDirectory(targetDirectory);
-            Thorium_IO.Directory.CopyDirectory(packageCacheDir, targetDirectory);
+            Thorium.IO.Directory.CopyDirectory(packageCacheDir, targetDirectory);
         }
 
         public static void CreateDataPackage(string id, string sourceDirectory, bool deleteSourceAfterUpload = false)

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using Thorium_Config;
+using Thorium.Config;
 
-namespace Thorium_Storage_Service
+namespace Thorium.StorageService
 {
     public class FileSystemStorageBackend : IStorageBackend
     {
