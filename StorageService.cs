@@ -18,7 +18,7 @@ namespace Thorium.StorageService
 
         static StorageService()
         {
-            var config = ConfigFile.GetClassConfig();
+            dynamic config = ConfigFile.GetClassConfig();
 
             Type t = ReflectionHelper.GetType(config.StorageBackend);
             if(t == null)
